@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Hebrew Word of the Day</title>
+    <meta
+      name="description"
+      content="Learn one Biblical Hebrew word every day — meaning, pronunciation, and a verse in context. Installable, offline-ready."
+    />
+    <meta name="theme-color" content="#1e1b4b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hebrew Word" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">תּ</span>
+        <span class="brand-text">Hebrew Word<br /><small>of the day</small></span>
+      </div>
+      <button id="installBtn" class="install-btn" hidden>Install</button>
+    </header>
+
+    <main class="stage">
+      <article id="card" class="card" aria-live="polite">
+        <div class="card-top">
+          <span id="date" class="date"></span>
+          <span id="pos" class="pos"></span>
+        </div>
+
+        <p id="hebrew" class="hebrew" lang="he" dir="rtl">…</p>
+
+        <div class="phon">
+          <span id="translit" class="translit"></span>
+          <button id="speakBtn" class="speak" title="Pronounce" aria-label="Pronounce the word">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M3 10v4a1 1 0 0 0 1 1h3l4 4a1 1 0 0 0 1.7-.7V5.7A1 1 0 0 0 11 5L7 9H4a1 1 0 0 0-1 1Zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Zm-2.5-9v2.1a7 7 0 0 1 0 13.8V21a9 9 0 0 0 0-18Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <p id="pron" class="pron"></p>
+
+        <p id="gloss" class="gloss"></p>
+        <p id="meaning" class="meaning"></p>
+
+        <div class="meta">
+          <span class="chip" id="strongs"></span>
+          <span class="chip" id="occ"></span>
+        </div>
+
+        <figure class="verse">
+          <p id="verseHe" class="verse-he" lang="he" dir="rtl"></p>
+          <p id="verseEn" class="verse-en"></p>
+          <figcaption id="verseRef" class="verse-ref"></figcaption>
+        </figure>
+      </article>
+
+      <nav class="controls" aria-label="Browse words">
+        <button id="prevBtn" class="nav-btn" aria-label="Previous word">‹ Prev</button>
+        <button id="todayBtn" class="nav-btn primary">Today</button>
+        <button id="nextBtn" class="nav-btn" aria-label="Next word">Next ›</button>
+      </nav>
+      <button id="randomBtn" class="random-btn">Surprise me</button>
+    </main>
+
+    <footer class="foot">
+      <span id="counter"></span>
+      <span class="dot">·</span>
+      <span>Biblical Hebrew · works offline</span>
+    </footer>
+
+    <script src="words.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
